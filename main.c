@@ -1,15 +1,12 @@
-#include <stdio.h> 
-#include <stdlib.h> 
-#include <string.h> 
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <unistd.h>
-#include <sys/mman.h>
-#include <fcntl.h>
-#include <errno.h>
+#include "parseur.h" 
 
-#include "api.h" 
+int main(int argc, char*argv[]){
+	tester();
+	return 0;
+}
 
+
+/*
 #define false 0 
 
 
@@ -22,12 +19,12 @@ int main(int argc,char *argv[])
         struct stat st;
 
 	if (argc < 3 ) { printf("Usage: httpparser <file> <search>\nAttention <search> is case sensitive\n"); exit(1); }
-	/* ouverture du fichier contenant la requête */ 
+	
 	if ((fi=open(argv[1],O_RDWR)) == -1) {
                 perror("open");
                 return false;
         }
-        if (fstat(fi, &st) == -1)           /* To obtain file size */
+        if (fstat(fi, &st) == -1)          
                 return false;
         if ((addr=mmap(NULL,st.st_size,PROT_WRITE,MAP_PRIVATE, fi, 0)) == NULL )
                 return false;
@@ -62,4 +59,4 @@ int main(int argc,char *argv[])
 	}
 	close(fi);
 	return(res); 
-}
+}*/
